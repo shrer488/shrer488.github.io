@@ -5,38 +5,52 @@
 
     --body-copy:2rem;
 
-    --gutter:2rem;
+    --spacing:2rem;
 
     font-family: sans-serif;
+
+    --h1-size:3rem;
 }
 
 body{
     background-color: var(--background);
     color: var(--color);
 
+    header{
+        text-align: center;
+        padding: var(--spacing);
+
+        h1{
+            font-size: var(--h1-size);
+        }
+    }
+
     .content{
         display: flex;
         flex-direction: column;
-        gap: var(--gutter);
+        gap: var(--spacing);
 
         .about{
             padding: 1rem;
-            background-color: white;
-            color: black;
+            background-color: rgb(94, 94, 94);
+            color: white;
             align-self: start; /*to make the item not take the entire section*/
         }
 
         .work{
             ul{
-                padding-inline: var(--gutter);
+                padding-inline: var(--spacing);
                 display: grid;
                 grid-template-columns: 1fr;
-                gap: var(--gutter);
+                gap: var(--spacing);
+                
                 li{
-                    padding: calc(var(--gutter)*2);
-                    border: 1rem var(black) solid;
-                    background-color: white;
-                    color: black;
+                    a{
+                        display: block;
+                        padding: calc(var(--spacing)*2);
+                        background-color: white;
+                        color: black;
+                    }
                 }
             }
         }
@@ -47,7 +61,7 @@ body{
 footer{
     background-color: var(--color);
     color: var(--background);
-    padding-inline: var(--gutter);
+    padding-inline: var(--spacing);
 }
 
 @media (width>650px) {
@@ -56,7 +70,7 @@ footer{
         .content{
             display: flex;
             flex-direction: row;
-             padding: var(--gutter);
+             padding: var(--spacing);
 
             .about{
 
@@ -67,12 +81,25 @@ footer{
                 
                 ul{
                     padding: 0;
-                    padding-inline-end: calc(var(--gutter)*2);
+                    padding-inline-end: calc(var(--spacing)*2);
                     grid-template-columns: repeat(2, 1fr);
-                    gap: var(--gutter);
+                    gap: var(--spacing);
+
                     li{
-                        border: 1rem var(black) solid;
-                        background-color: white;
+                        a{
+                            background-color: white;
+                        }
+
+                        /*
+                        Wanted to add elivation to card on hover.
+                        So I found this https://codepen.io/nefejames/pen/emONEew
+                        What is happening is:
+                        on hover it is adding a box shadow behind the box and scaling its size by 1.02.
+                        */
+                        a:hover{
+                            transform: scale(1.02);
+                            box-shadow: 0 0 0 5px rgb(94, 94, 94);
+                        }
                     }
             }
             }
