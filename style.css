@@ -17,14 +17,18 @@ body{
     .content{
         display: flex;
         flex-direction: column;
+        gap: var(--gutter);
 
         .about{
-
+            padding: 1rem;
+            background-color: white;
+            color: black;
+            align-self: start; /*to make the item not take the entire section*/
         }
 
         .work{
             ul{
-                padding: calc(var(--gutter)*2);
+                padding-inline: var(--gutter);
                 display: grid;
                 grid-template-columns: 1fr;
                 gap: var(--gutter);
@@ -32,6 +36,7 @@ body{
                     padding: calc(var(--gutter)*2);
                     border: 1rem var(black) solid;
                     background-color: white;
+                    color: black;
                 }
             }
         }
@@ -51,22 +56,24 @@ footer{
         .content{
             display: flex;
             flex-direction: row;
+             padding: var(--gutter);
 
             .about{
 
             }
             
             .work{
+                flex-grow: 1;
                 
                 ul{
-                padding: calc(var(--gutter)*2);
-                grid-template-columns: repeat(3, 1fr);
-                gap: var(--gutter);
-                li{
-                    padding: calc(var(--gutter)*2);
-                    border: 1rem var(black) solid;
-                    background-color: white;
-                }
+                    padding: 0;
+                    padding-inline-end: calc(var(--gutter)*2);
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: var(--gutter);
+                    li{
+                        border: 1rem var(black) solid;
+                        background-color: white;
+                    }
             }
             }
         }
