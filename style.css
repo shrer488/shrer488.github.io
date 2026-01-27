@@ -4,8 +4,6 @@
 :root{
     --background: #333;
     --stamp-bg: #F6E9CA;
-    
-    --color:white;
 
     --body-copy:2rem;
 
@@ -18,7 +16,7 @@
 
 body{
     background-color: var(--background);
-    color: var(--color);
+    color: var(--stamp-bg);
 
     header{
         text-align: center;
@@ -36,9 +34,10 @@ body{
 
         .about{
             padding: 1rem;
-            background-color: rgb(94, 94, 94);
-            color: white;
+            background-color: rgb(93, 93, 93);
+            color: var(--stamp-bg);
             align-self: start; /*to make the item not take the entire section*/
+            border-radius: 0.2rem;
         }
 
         .work{
@@ -50,13 +49,32 @@ body{
                 gap: var(--spacing);
                 
                 li{
-                    border: 0.5rem solid var(--stamp-bg);
                     a{
+                        border: 0.5rem solid var(--stamp-bg);
                         padding: var(--spacing);
                         display: block;
-                        background-color: green;
-                        color: black;
-                        
+                        font-size: 2rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+
+                }
+
+                li:first-child{
+                    a{
+                        background-color: #1D5284;
+                    }
+                }
+
+                li:nth-child(2){
+                    a{
+                        background-color: #2E4D52;
+                    }
+                }
+
+                li:nth-child(3){
+                    a{
+                        background-color: #6D2D3B;
                     }
                 }
             }
@@ -66,7 +84,7 @@ body{
 
 
 footer{
-    background-color: var(--color);
+    background-color: var(--stamp-bg);
     color: var(--background);
     padding-inline: var(--spacing);
 }
