@@ -17,6 +17,10 @@
 body{
     background-color: var(--background);
     color: var(--stamp-bg);
+    block-size: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    
 
     header{
         text-align: center;
