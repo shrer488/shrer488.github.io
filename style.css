@@ -32,7 +32,7 @@ body{
     block-size: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
-    padding-inline: calc(var(--spacing)*3);
+    padding-inline: calc(var(--spacing)*2);
     
 
     header{
@@ -49,14 +49,15 @@ body{
 
     .content{
         grid-row: 2;
-        background-image: url("images/name\ bg.png");
+        background-image: url("images/name\ bg\ mobile.svg");
         background-color: #ffffff;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 70rem;
+        background-size: 18rem;
         
         ul{
             display: grid;
+            grid-template-columns: 1fr 1fr;
            
 
             li{
@@ -246,6 +247,10 @@ footer{
         }
         .content{
             display: grid;
+             background-image: url("images/name\ bg.svg");
+             background-size: 80rem;
+            background-position: top;
+
             grid-template-columns: 1fr;
              padding: var(--spacing);
              width: 100%;
