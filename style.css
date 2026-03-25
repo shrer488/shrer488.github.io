@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root{
-    --background: #f4f4f4;
-    --stamp-bg: #F6E9CA;
+    --background: #ffffff;
+    --proj-background: #ffffff;
+    --border: #B9B9B9;
     --text-color: #4A453F;
+
+    --border-width:0.05rem;
+    --border-radius:0.8rem;
+
 
     --body-copy:2rem;
 
     --spacing:2rem;
 
-    font-family: "M PLUS Code Latin", monospace;
+    font-family: "Funnel Sans", sans-serif;
 
     --h1-size:3rem;
     --h2-size:2rem;
@@ -29,12 +35,78 @@ body{
     
 
     header{
-        text-align: center;
-        padding: var(--spacing);
+        grid-row: 3;
+        /* background-color: red; */
+        text-align: left;
 
         h1{
             font-size: var(--h1-size);
         }
+    }
+
+    .content{
+        grid-row: 2;
+        background-image: url("images/name\ bg.png");
+        background-color: #ffffff;
+        background-position: center;
+background-repeat: no-repeat;
+background-size: 70rem;
+        
+        ul{
+            display: grid;
+           
+
+            li{
+                justify-items: start;
+                
+                .tag{
+                    background-color: var(--proj-background);
+                    padding-inline:calc(var(--spacing)*1.2);
+                    padding-block:calc(var(--spacing)/2);
+                    border-radius: var(--border-radius);
+                    border: var(--border-width) solid var(--border);
+                    box-shadow: 0 0.2rem 1rem 0 rgba(131, 131, 131, 0.04);
+                    
+                    h2{
+                            font-size: var(--h2-size);
+                            font-weight: 200;
+                        }
+                    
+                        .description{
+                        display: none;
+                        position: absolute;
+                        z-index: 1;
+                        background-color: var(--proj-background);
+                        border: var(--border-width) var(--border) solid;
+                        border-radius: 0.5rem;
+                        padding: calc(var(--spacing));
+            
+                        
+                        .photo{
+                            max-width: var(--imgSize);
+            
+                            img{
+                                margin-block-end:var(--spacing);
+                            }
+                        }
+                    }
+                }
+
+                .tag:active{
+                   .description{
+                        display: block;
+                    } 
+                }
+                
+            }
+
+        }
+
+        
+    }
+
+    .link{
+        grid-row: 1;
     }
 
     .content{
@@ -152,12 +224,61 @@ footer{
 }
 
 @media (width>650px) {
+    :root{
+        --spacing:1rem;
+        --imgSize: 16rem;
+
+        --h2-size: 1.4rem;
+    }
 
     body{
+
+        header{
+            grid-row: 1;
+            max-width: 20rem;
+        }
         .content{
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
              padding: var(--spacing);
+             width: 100%;
+
+
+             ul{
+                 grid-auto-rows: 6rem; /* Give the implicit tracks a size. */
+            grid-auto-columns: 1fr;
+
+                .tag{
+                    
+                }
+
+                .tag:hover{
+                    .description{
+                        display: block;
+                    }
+                }
+                
+                li:nth-child(2) {
+                    grid-column: 2;
+                    grid-row: 4;
+                }
+
+                li:nth-child(3) {
+                    grid-column: 5;
+                    grid-row: 2;
+                }
+
+                li:last-child {
+                    grid-column: 6;
+                    grid-row: 6;
+                }
+
+                .description{
+                    
+                }
+                }
+             }
+
 
             .about{
 
@@ -194,4 +315,3 @@ footer{
             }
         }
     }
-}
