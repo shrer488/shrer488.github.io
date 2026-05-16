@@ -26,3 +26,4 @@ document.querySelectorAll('.modal').forEach(trigger => {
   });
 });
 
+

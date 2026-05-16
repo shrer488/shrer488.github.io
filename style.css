@@ -163,8 +163,10 @@ body{
                     border: var(--border-width) solid var(--border);
                     box-shadow: 0 0.2rem 1rem 0 rgba(131, 131, 131, 0.04);
                     
+                    font-size: 1rem;
+                    font-weight: 400;
                         
-                    .description{
+                    /* .description{
                     display: none;
                     position: absolute;
                     z-index: 1;
@@ -191,13 +193,7 @@ body{
                             margin-block-end:var(--spacing);
                         }
                     }
-                    }
-                }
-
-                .tag:active{
-                   .description{
-                        display: block;
-                    } 
+                    } */
                 }
                 
             }
@@ -370,6 +366,10 @@ footer{
                 }
             }
                 .tag{
+
+                    .description{
+                        display: none;
+                    }
                     
                 }
 
