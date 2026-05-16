@@ -83,6 +83,7 @@ body{
         ul{
             display: grid;
             grid-template-columns: 1fr 1fr;
+            align-items: stretch;
             
 
             li{
@@ -207,111 +208,7 @@ body{
         grid-row: 1;
     }
 
-    .content{
-        display: grid;
-        grid-template-columns: 1fr;
-        /* flex-direction: column; */
-        gap: var(--spacing);
-
-        .about{
-            padding: 1rem;
-            background-color: rgb(93, 93, 93);
-            color: var(--stamp-bg);
-            align-self: start; /*to make the item not take the entire section*/
-            border-radius: 0.2rem;
-            /* max-width: 20rem; */
-
-            .intro{
-                padding-block-end: 1rem;
-                border-block-end: 0.1rem solid var(--stamp-bg);
-            }
-
-            .contact{
-                padding-block-start: 1rem;
-            }
-        }
-
-        .work{
-
-            ul{
-                padding-inline: var(--spacing);
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: var(--spacing);
-                
-                li{
-                    position: relative;
-                    padding: 2rem;
-                    a{
-                        /* border: 0.5rem solid var(--stamp-bg); */
-                        display: flex;
-                        text-align: left;
-                        
-                    }
-
-                    .photo{
-                        position: absolute;
-                        top: -2rem;
-                        right: -2rem;
-                        z-index: -1;
-
-
-                        img{
-                            max-width: 20rem;
-                        }
-
-                        img:before{
-                            content: url("Images/paperclip.svg");
-                            display: inline-block; /* Allows width/height and alignment */
-  width: 20px; /* Set the desired width */
-  height: 20px; 
-                        }
-                    }
-                    
-                    .letter{
-                        padding: var(--spacing);
-                        background-color:var(--letter-background);
-                        
-                        h2{
-                            font-size: var(--h2-size);
-                            font-weight: 600;
-                            margin-block-end: 1rem;
-                        }
-
-                        p{
-                            font-size: var(--text-size);
-                            font-weight: 400;
-                        }
-                    }
-                }
-
-                li:hover{
-                    .photo{
-                        z-index: 1;
-                        transform: rotate(2deg);
-                    }
-                }
-
-                li:first-child{
-                    a{
-                        /* background-color: #1D5284; */
-                    }
-                }
-
-                li:nth-child(2){
-                    a{
-                        /* background-color: #2E4D52; */
-                    }
-                }
-
-                li:nth-child(3){
-                    a{
-                        /* background-color: #6D2D3B; */
-                    }
-                }
-            }
-        }
-    }
+    
 }
 
 
@@ -368,6 +265,8 @@ footer{
                 .tagDesktop:hover{
                     .description{
                         display: block;
+                        position: absolute;
+                        max-width: 18rem;
                     }
                 }
 
