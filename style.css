@@ -74,7 +74,7 @@ body{
 
     .content{
         grid-row: 2;
-        background-image: url("images/name\ bg\ mobile.svg");
+        background-image: url("images/name\ bg\ mobile.svg"); 
         background-color: #ffffff;
         background-position: center;
         background-repeat: no-repeat;
@@ -360,7 +360,18 @@ footer{
 
                 .tagDesktop{
                     display: block;
+                    .description{
+                        display: none;
+                    }
                 }
+
+                .tagDesktop:hover{
+                    .description{
+                        display: block;
+                    }
+                }
+
+
                 .tagMobile{
                     display: none;
                 }
