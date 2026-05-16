@@ -1,16 +1,12 @@
-// Support multiple modal triggers/dialogs
+// Used Ask mode and chatgpt to understand how to trigger modals openning for different items. first it detects all the modal in the page
+
+
 document.querySelectorAll('.modal').forEach(trigger => {
-  // try common placements: next sibling dialog, or a dialog inside the closest section/parent
-  let dialog = (trigger.nextElementSibling && trigger.nextElementSibling.tagName === 'DIALOG')
+  let dialog = (trigger.nextElementSibling === 'DIALOG')
     ? trigger.nextElementSibling
     : (trigger.closest('section') || trigger.parentElement).querySelector('dialog');
 
-  if (!dialog) {
-    console.warn('No dialog found for trigger', trigger);
-    return;
-  }
-
-  trigger.addEventListener('click', () => {
+ 	trigger.addEventListener('click', () => {
     if (typeof dialog.showModal === 'function') dialog.showModal();
     else dialog.setAttribute('open', '');
   });
@@ -30,8 +26,3 @@ document.querySelectorAll('.modal').forEach(trigger => {
   });
 });
 
-// optional: ESC key closes any open dialogs
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') document.querySelectorAll('dialog[open]').forEach(d => d.close && d.close());
-});
-// ...existing code...
