@@ -238,12 +238,20 @@ footer{
 
                 .tagDesktop{
                     display: block;
+
                     .description{
                         display: none;
                     }
                 }
 
                 .tagDesktop:hover{
+
+                    .tag{
+                        /* background-color: #eaeaea; */
+                        box-shadow: 1rem 1rem 5rem rgba(255, 114, 208, 0.651);
+                        font-weight: 500;
+                    }
+
                     .description{
                         display: block;
                         position: absolute;
@@ -256,19 +264,7 @@ footer{
                     display: none;
                 }
             }
-                .tag{
-
-                    .description{
-                        display: none;
-                    }
-                    
-                }
-
-                .tag:hover{
-                    .description{
-                        display: block;
-                    }
-                }
+                
                 
                 li:nth-child(2) {
                     grid-column: 2;
