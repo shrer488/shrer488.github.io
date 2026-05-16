@@ -1,4 +1,5 @@
-# shrer488.github.io
+
+<img src="images/name bg.svg" style="width: 200px; border-radius: 10px; margin: 10px">
 This is a collection of coding exercises that I have done during my time at Parsons School of Design for our Typography & Interaction class.
 
 The website is composed of 5 projects done over 2025 and 2026:
