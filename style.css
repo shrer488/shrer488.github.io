@@ -31,8 +31,9 @@ body{
     color: var(--text-color);
     block-size: 100vh;
     display: grid;
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows: 1fr min-content min-content;
     padding: calc(var(--spacing)*2);
+    gap: 1rem;
     
     p{
         font-size: 0.9rem;
@@ -42,7 +43,7 @@ body{
 
     
     header{
-        grid-row: 3;
+        grid-row: 2;
         text-align: left;
 
         h1{
@@ -73,12 +74,13 @@ body{
    
 
     .content{
-        grid-row: 2;
+        grid-row: 1;
         background-image: url("images/name\ bg\ mobile.svg"); 
         background-color: #ffffff;
         background-position: center;
         background-repeat: no-repeat;
         background-size: 18rem;
+        margin-block-start: calc(var(--spacing)*2);
         
         ul{
             display: grid;
@@ -89,6 +91,19 @@ body{
 
             li{
                 justify-items: start;
+
+                .tag{
+                    background-color: var(--proj-background);
+                    padding-inline:calc(var(--spacing)*1.2);
+                    padding-block:calc(var(--spacing)/2);
+                    border-radius: var(--border-radius);
+                    border: var(--border-width) solid var(--border);
+                    box-shadow: 0 0.2rem 1rem 0 rgba(131, 131, 131, 0.04);
+                    
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                        
+                }
                 
                 /* In mobile the description shows as pop up, but in desktop it shows on hover so here we are hiding the desktop version */
                 .tagDesktop{
@@ -96,7 +111,6 @@ body{
                 }
 
                 dialog{
-                        
                         margin: 0 auto;
 
                         /* Defaults to `position: absolute;`, this centers it: */
@@ -153,51 +167,15 @@ body{
                 
                 
                 }
-                        
-                       
-                
-                
-                .tag{
-                    background-color: var(--proj-background);
-                    padding-inline:calc(var(--spacing)*1.2);
-                    padding-block:calc(var(--spacing)/2);
-                    border-radius: var(--border-radius);
-                    border: var(--border-width) solid var(--border);
-                    box-shadow: 0 0.2rem 1rem 0 rgba(131, 131, 131, 0.04);
-                    
-                    font-size: 1rem;
-                    font-weight: 400;
-                        
-                    /* .description{
-                    display: none;
-                    position: absolute;
-                    z-index: 1;
-                    background-color: var(--proj-background);
-                    border: var(--border-width) var(--border) solid;
-                    border-radius: 0.5rem;
-                    padding: calc(var(--spacing));
-        
-                    .projectInfo{
-                            margin-block-start: calc(var(--spacing)*2);
-                            margin-block-end: calc(var(--spacing)*3) ;
-                            h2{
-                                font-size: 1.4rem;
-                                font-weight: 600;
-                                margin-block-end: 0.2rem;
-                            }
-                            
-                        }
+                     
+            }
 
-                    .photo{
-                        max-width: var(--imgSize);
-        
-                        img{
-                            margin-block-end:var(--spacing);
-                        }
-                    }
-                    } */
-                }
-                
+            li:nth-child(odd){
+                align-content: center;
+            }
+
+            li:nth-child(even){
+                margin: 0 auto;
             }
 
         }
