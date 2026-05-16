@@ -209,15 +209,17 @@ footer{
     }
 
     body{
-        
-
         padding: 2rem;
+        grid-template-rows: min-content 1fr  min-content;
+
 
         header{
             grid-row: 1;
             max-width: 20rem;
         }
+
         .content{
+            grid-row: 2;
             display: grid;
              background-image: url("images/name\ bg.svg");
              background-size: 80rem;
