@@ -32,12 +32,17 @@ body{
     block-size: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
-    padding-inline: calc(var(--spacing)*2);
+    padding: calc(var(--spacing)*2);
     
+    p{
+        font-size: 0.9rem;
+        font-weight: 300;
+        opacity: 0.8;
+     }
 
+    
     header{
         grid-row: 3;
-        /* background-color: red; */
         text-align: left;
 
         h1{
@@ -45,6 +50,25 @@ body{
             font-weight: 500;
             margin-bottom: var(--spacing);
         }
+
+        .externalLinks{
+            margin-block: var(--spacing);
+            display: flex;
+            gap: 1rem;
+
+            a{
+                display: inline-block;
+            }
+            a::after{
+                content: "↗";
+            }
+        }
+
+        a:hover{
+            background-color: #eaeaea;
+            font-weight: 400;
+        }
+        
     }
    
 
@@ -84,48 +108,49 @@ body{
                             pointer-events: none; /* Let clicks pass through to our `document` listener. */
                         }
                 }
-                        .description{
-                            display: flex;
-                            flex-direction: column;
-                            background-color: var(--proj-background);
-                            border: var(--border-width) var(--border) solid;
-                            border-radius: var(--border-radius);
-                            padding: calc(var(--spacing)*1.2);
-                            min-width: 16rem;
+                
+                .description{
+                    display: flex;
+                    flex-direction: column;
+                    background-color: var(--proj-background);
+                    border: var(--border-width) var(--border) solid;
+                    border-radius: var(--border-radius);
+                    padding: calc(var(--spacing)*1.2);
+                    min-width: 16rem;
 
 
-                           .closeModal{
-                            margin-inline-start: auto;
-                            margin-block-end: 0.4rem;
-                            }
+                    .closeModal{
+                    margin-inline-start: auto;
+                    margin-block-end: 0.4rem;
+                    }
 
-                            .seeProject{
-                            padding-block: 0.5rem;
-                            padding-inline: calc(var(--spacing)*2);
-                            border-radius: 0.5rem;
-                            background-color: #eaeaea;
+                    .seeProject{
+                    padding-block: 0.5rem;
+                    padding-inline: calc(var(--spacing)*2);
+                    border-radius: 0.5rem;
+                    background-color: #eaeaea;
 
-                            
-                            a{
-                                display: flex;
-                                flex-direction: row; 
-                                justify-content: space-between;
-                                align-items: center;
+                    
+                    a{
+                        display: flex;
+                        flex-direction: row; 
+                        justify-content: space-between;
+                        align-items: center;
 
-                                p{
-                                    font-size: 1rem;
-                                    font-weight: 600;
-                                }
-
-                                img{
-                                    max-width: 1.2rem;
-                                }
-                            }
+                        p{
+                            font-size: 1rem;
+                            font-weight: 600;
                         }
 
-                       
-                        
+                        img{
+                            max-width: 1.2rem;
                         }
+                    }
+                }
+
+                
+                
+                }
                         
                        
                 
@@ -138,10 +163,6 @@ body{
                     border: var(--border-width) solid var(--border);
                     box-shadow: 0 0.2rem 1rem 0 rgba(131, 131, 131, 0.04);
                     
-                    h2{
-                            font-size: var(--h2-size);
-                            font-weight: 200;
-                     }
                         
                     .description{
                     display: none;
@@ -160,11 +181,7 @@ body{
                                 font-weight: 600;
                                 margin-block-end: 0.2rem;
                             }
-                            p{
-                                font-size: 0.9rem;
-                                font-weight: 300;
-                                opacity: 0.8;
-                            }
+                            
                         }
 
                     .photo{
@@ -322,7 +339,7 @@ footer{
     body{
         
 
-        padding-inline: 0rem;
+        padding: 2rem;
 
         header{
             grid-row: 1;
