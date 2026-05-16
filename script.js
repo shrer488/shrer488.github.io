@@ -1,21 +1,37 @@
-const modalButton = document.querySelector("#modal");
-const modalDialog = document.querySelector("#dialog");
-const closeDialog = modalDialog.querySelector(".closeModal");
+// Support multiple modal triggers/dialogs
+document.querySelectorAll('.modal').forEach(trigger => {
+  // try common placements: next sibling dialog, or a dialog inside the closest section/parent
+  let dialog = (trigger.nextElementSibling && trigger.nextElementSibling.tagName === 'DIALOG')
+    ? trigger.nextElementSibling
+    : (trigger.closest('section') || trigger.parentElement).querySelector('dialog');
 
+  if (!dialog) {
+    console.warn('No dialog found for trigger', trigger);
+    return;
+  }
 
-console.log(modalButton);
-modalButton.addEventListener("click", () => {
-  modalDialog.showModal();
+  trigger.addEventListener('click', () => {
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+  });
+
+  const closeBtn = dialog.querySelector('.closeModal');
+  if (closeBtn) closeBtn.addEventListener('click', () => {
+    if (typeof dialog.close === 'function') dialog.close();
+    else dialog.removeAttribute('open');
+  });
+
+  // clicking backdrop closes the dialog
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) {
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    }
+  });
 });
 
-closeDialog.addEventListener("click", () => {
-  modalDialog.close();
+// optional: ESC key closes any open dialogs
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.querySelectorAll('dialog[open]').forEach(d => d.close && d.close());
 });
-
-// Listen to *all* clicks, now including the `event` parameter…
-document.addEventListener('click', (event) => {
-	// Only clicks on the page itself behind the `dialog`.
-	if (event.target == document.documentElement) {
-		modalDialog.close() // Close it too then.
-	}
-})
+// ...existing code...
