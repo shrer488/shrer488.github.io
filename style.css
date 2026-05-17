@@ -252,6 +252,7 @@ footer{
                     .description{
                         display: block;
                         position: absolute;
+                        z-index: 1;
                         max-width: 18rem;
                     }
                 }
@@ -266,57 +267,32 @@ footer{
                 li:nth-child(2) {
                     grid-column: 1;
                     grid-row: 4;
+                    position: relative;
+
+                    .description{
+                     bottom: 20%;
+                     left: 8rem;
+                    }
                 }
 
                 li:nth-child(3) {
-                    grid-column: 5;
+                    grid-column: 4;
                     grid-row: 1;
                 }
 
                 li:last-child {
                     grid-column: 6;
                     grid-row: 2;
+                    position: relative;
+
+                    .description{
+                     bottom: -40%;
+                     right: 18rem;
+                    }
                 }
 
-                .description{
-                    
-                }
                 }
              }
 
-
-            .about{
-
-            }
-            
-            .work{
-                flex-grow: 1;
-                
-                ul{
-                    padding: 0;
-                    padding-inline-end: calc(var(--spacing)*2);
-                    grid-template-columns: repeat(2, 1fr);
-                gap:calc(var(--spacing)*2);
-
-
-                    li{
-                        a{
-                            /* background-color: white; */
-                            
-                        }
-
-                        /*
-                        Wanted to add elivation to card on hover.
-                        So I found this https://codepen.io/nefejames/pen/emONEew
-                        What is happening is:
-                        on hover it is adding a box shadow behind the box and scaling its size by 1.02.
-                        */
-                        a:hover{
-                            transform: scale(1.02);
-                            box-shadow: 0 0 0 0.5rem rgb(94, 94, 94);
-                        }
-                    }
-            }
-            }
         }
     }
